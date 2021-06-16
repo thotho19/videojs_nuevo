@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Videojs/Nuevo - Resolution switcher</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="../videojs/css/videojs.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="header">
+	<div class="menu">
+		<a href="https://www.nuevodevel.com/nuevo/"><img src="images/nuevodevel.png"></a>
+		<div class="browse">&larr; <a href="index.html">Back to examples</a></div>
+	</div>
+</div>
+
+<div class="container">
+	<h1>Video quality switcher</h1>
+
+	<script type="text/javascript" src="../videojs/video.min.js"></script>
+	<script type="text/javascript" src="../videojs/nuevo.min.js"></script>
+
+	<div class="media-parent">
+		<div class="media-child">
+			<video id="player_1" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline webkit-playsinline poster="images/poster.jpg">
+				<source src="//devnuevo.com/media/video/demo_240.mp4" res="240" label="240p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_360.mp4" res="360" label="360p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_480.mp4" default res="480" label="480p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_720.mp4" res="720" label="720p" type="video/mp4">
+			</video>
+		</div>
+	</div>
+
+
+
+	<script>
+	var player = videojs('player_1');
+	player.nuevo({ 
+		//option1: value,
+		//option2: value,
+		//option3: value
+	});
+	</script>
+
+<h2>Code Setup</h2>
+<pre>
+<span class="comment">&lt;!--Head tag CSS--&gt;</span>
+&lt;link href="../videojs/css/videojs.min.css" rel="stylesheet" type="text/css" /&gt;
+
+<span class="comment">&lt;!--Load player and Nuevo plugin--&gt;</span>
+&lt;script type="text/javascript" src="../videojs/video.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../videojs/nuevo.min.js"&gt;&lt;/script&gt;
+
+<span class="comment">&lt;!--Multiple reslolution video on page setup--&gt;</span>
+&lt;video id="player_1" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline poster="images/poster.jpg"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_240.mp4" res="240" label="240p" type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_360.mp4" res="360" label="360p" type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_480.mp4" res="480" label="480p" default type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_720.mp4" res="720" label="720p" type="video/mp4"&gt;
+&lt;/video&gt;
+
+<span class="comment">&lt;!--Initialize player and plugin--&gt;</span>
+&lt;script&gt;
+	var player = videojs('player_1');
+	player.nuevo({ 
+		//option1: value,
+		//option2: value
+	});
+&lt;/script&gt;
+</pre>
+
+<br />
+<h2>SD/HD Quality Switcher</h2>
+
+	<div class="media-parent">
+		<div class="media-child">
+			<video id="player_2" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline poster="images/poster.jpg">
+				<source src="//devnuevo.com/media/video/demo_720.mp4" res="HD" label="HD" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_360.mp4" res="SD" label="SD" type="video/mp4" default>
+			</video>
+		</div>
+	</div>
+
+	<script>
+	var player2 = videojs('player_2');
+	player2.nuevo({ 
+		//option1: value,
+		//option2: value
+	});
+	</script>
+
+<h2>Media sources Setup</h2>
+<pre>
+
+
+<span class="comment">&lt;!--Setup SD/HD video tag--&gt;</span>
+&lt;video id="player_2" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline poster="images/poster.jpg"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_720.mp4" res="HD" label="HD" type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_360.mp4" res="SD" label="SD" type="video/mp4 default"&gt;
+&lt;/video&gt;
+&lt;/script&gt;
+</pre>
+<br />
+
+<h2>Settings Menu quality switcher</h2>
+
+	<div class="media-parent">
+		<div class="media-child">
+			<video id="player_3" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline webkit-playsinline poster="images/poster.jpg">
+				<source src="//devnuevo.com/media/video/demo_240.mp4" res="240" label="240p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_360.mp4" res="360" label="360p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_480.mp4" default res="480" label="480p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_720.mp4" res="720" label="720p" type="video/mp4">
+			</video>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../videojs/video.min.js"></script>
+	<script type="text/javascript" src="../videojs/nuevo.min.js"></script>
+
+	<script>
+	var player = videojs('player_3');
+	player.nuevo({ 
+		qualityMenu: true
+	});
+	</script>
+
+<h2>Media sources and Player Code Setup</h2>
+<pre>
+<span class="comment">&lt;!--Multiple reslolution video on page setup--&gt;</span>
+&lt;video id="player_3" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline poster="images/poster.jpg"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_240.mp4" res="240" label="240p" type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_360.mp4" res="360" label="360p" type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_480.mp4" res="480" label="480p" default type="video/mp4"&gt;
+	&lt;source src="//devnuevo.com/media/video/demo_720.mp4" res="720" label="720p" type="video/mp4"&gt;
+&lt;/video&gt;
+
+<span class="comment">&lt;!--Initialize player and plugin with quality Settings menu--&gt;</span>
+&lt;script&gt;
+	var player = videojs('player_3');
+	player.nuevo({ 
+		qualityMenu: true
+	});
+&lt;/script&gt;
+</pre>
+<br />
+	<div style="text-align:center;fonr-size:1.1em;">
+For HLS and MPEG-DASH streams quality switcher appears automatically if only multiple variants of media defined in playlist file.<br />
+Android device requires to override HLS native playback. Check <a href="https://www.nuevodevel.com/nuevo/showcase/hls">https://www.nuevodevel.com/nuevo/showcase/hls</a> for details.<br /><br />
+iOS is missing Media Source Extension, use only native HLS streaming and does not allow to manipulate stream quality manually. iOS does not support MPEG DASH type of streaming at all.
+	
+	</div>
+
+</div>
+<div class="footer">
+&copy; 2008 - 2020, <a href="https://www.nuevodevel.com">Nuevo Development</a>. All rights reserved.
+</div>
+
+</body>
+</html>

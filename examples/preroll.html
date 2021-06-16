@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Videojs/Nuevo - Preroll Videos</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="../videojs/css/videojs.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="header">
+	<div class="menu">
+		<a href="https://www.nuevodevel.com/nuevo/"><img src="images/nuevodevel.png"></a>
+		<div class="browse">&larr; <a href="index.html">Back to examples</a></div>
+	</div>
+</div>
+
+<div class="container">
+	<h1>Simple Preroll Video</h1>
+
+	<script type="text/javascript" src="../videojs/video.min.js"></script>
+	<script type="text/javascript" src="../videojs/nuevo.min.js"></script>
+
+	<div class="media-parent">
+		<div class="media-child">
+			<video id="player_1" class="video-js vjs-fluid vjs-default-skin" controls preload playsinline webkit-playsinline poster="images/poster.jpg">
+				<source src="//devnuevo.com/media/video/demo_720.mp4" res="720" label="720p" type="video/mp4">
+				<source src="//devnuevo.com/media/video/demo_720.webm" res="720" label="720p" type="video/webm">
+			</video>
+		</div>
+	</div>
+
+
+	<script>
+	var player = videojs('player_1');
+	player.nuevo({ 
+		slideImage: "images/sprite.jpg"
+	}); 
+	player.preroll({
+		src:{src:"//devnuevo.com/media/video/preroll.mp4",type:"video/mp4"},
+		href:"https://www.nuevodevel.com/nuevo",
+		skipTime:5
+	});
+	</script>
+
+<h2>Player and Plugins Code Setup</h2>
+<pre>
+
+<span class="comment">&lt;!--Initialize player and plugins--&gt;</span>
+&lt;script&gt;
+	var player = videojs('player_one');
+	player.nuevo({ 
+		slideImage: "images/sprite.jpg",
+	}); 
+	<span class="mark">player.preroll({
+		src:{src: "//devnuevo.com/media/video/preroll.mp4", type: "video/mp4"},
+		href: "https://www.nuevodevel.com",
+		skipTime: 5
+	});</span>
+&lt;/script&gt;
+</pre>
+
+
+</div>
+<div class="footer">
+&copy; 2008 - 2020, <a href="https://www.nuevodevel.com">Nuevodevel Software</a>. All rights reserved.
+</div>
+
+</body>
+</html>
